@@ -1,0 +1,60 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.7.18'
+	id 'io.spring.dependency-management' version '1.1.6'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	compileOnly 'org.projectlombok:lombok'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	runtimeOnly 'com.mysql:mysql-connector-j'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	// https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-jasper
+	implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper'//버전정보는 지워주는게 나음. 이거 추가하면 우클릭해서 gradle, refresh gradle 해야함.
+	// https://mvnrepository.com/artifact/javax.servlet/jstl
+	implementation group: 'javax.servlet', name: 'jstl'
+	// https://mvnrepository.com/artifact/org.webjars.bower/summernote
+	implementation group: 'org.webjars.bower', name: 'summernote', version: '0.8.16'  // 얘는 스프링부트에서 관리하는 애가 아니기 때문에 버전 정보 지우면 안 됨. // 얘는 게시글 작성하는 곳을 좀 꾸며주는 그런 라이브러리임. 부트 스트랩 같은거라 cdn을 추가해줘야함.
+	// 그래서 header.jsp에 추가해줌.
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-validation
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-validation'
+	// https://mvnrepository.com/artifact/org.modelmapper/modelmapper // 2개를 하나로 합칠 때 getter setter를 이용해서 꺼내서 넣지 않고 편하게 넣을 수 있게 해주는 거임.
+	implementation group: 'org.modelmapper', name: 'modelmapper', version: '3.1.1'
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-security'
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test
+	testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test'
+	// https://mvnrepository.com/artifact/org.springframework.security/spring-security-taglibs
+	implementation group: 'org.springframework.security', name: 'spring-security-taglibs'
+	// https://mvnrepository.com/artifact/com.google.code.gson/gson
+	implementation group: 'com.google.code.gson', name: 'gson'
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-oauth2-client
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-oauth2-client', version: '3.3.4'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
