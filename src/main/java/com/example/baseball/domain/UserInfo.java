@@ -9,6 +9,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Email;
 
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -21,6 +22,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 public class UserInfo {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
@@ -31,9 +33,10 @@ public class UserInfo {
 	@Column(nullable = false, length = 20)
 	private String password;
 	
-	@Column(nullable = false, length = 30)
+	@Column(nullable = false, length = 60)
 	private String nickname;
 	
+	@Column(nullable = false)
 	private String email;
 	
 	@CreationTimestamp
