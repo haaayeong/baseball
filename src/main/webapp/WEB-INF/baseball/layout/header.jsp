@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <script src="https://kit.fontawesome.com/b6ab2fabf0.js" crossorigin="anonymous"></script>
-<title>Twins</title>
+<title>Fan Twins</title>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,8 +32,8 @@
     </div>
     <div class="navbar-user">
       <ul>
-        <li><a href="#"><b>로그인</b></a></li>
-        <li><a href="#"><b>회원가입</b></a></li>
+        <li><a href="/user/login"><b>로그인</b></a></li>
+        <li><a href="/user/signup"><b>회원가입</b></a></li>
       </ul>
     </div>
     
