@@ -1,0 +1,33 @@
+@charset "UTF-8";
+footer {
+	font-family: "Jua", sans-serif;
+	background-color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+footer a {
+	padding-left: 40px;
+	text-decoration: none;
+}
+
+footer a:link{
+	color: #bfbfbf;
+}
+
+footer a:visited {
+	color: #bfbfbf;
+}
+
+footer a:hover {
+	text-decoration: underline;
+}
+
+footer .lgtwins {
+	display: inline-block;
+	font-size: 15px;
+	text-align: center;
+}
+
+
