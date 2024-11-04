@@ -9,42 +9,129 @@
 body {
 	width: 100vw;
 	margin: auto;
+	font-family: "Jua", sans-serif;
 }
 
-header {
+nav {
 	background-color: white;
 	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 8px 20px;
 	position: sticky;
 	top: 0;
 	overflow: hidden;	
 }
 
-header img {
+nav img {
 	padding-top: 10px;
 	width: 125px;
 }
 
-header ul {
+nav ul {
 	list-style: none;
 }
 
-header li {
+nav li {
 	display: inline-block;
 }
 
-header a {
+nav a {
 	text-decoration: none;
 }
 
-header .nav a:link {
+.navbar-menu {
+	display: flex;
+	margin-left: 30px;
 	color: #373737;
 }
 
-header .nav a:visited {
+nav .navbar-menu a:link {
 	color: #373737;
 }
 
-header .nav li a:hover {
-	color: #
+nav .navbar-menu a:visited {
+	color: #373737;
 }
+
+nav .navbar-menu a:hover {
+	opacity: 0.5;
+}
+
+.navbar-menu li {
+	font-size: 22px;
+	padding: 15px 30px;
+}
+
+.navbar-user {
+	color: #848484;
+	display: flex;
+}
+
+.navbar-user a:link{
+	color: #848484;
+}
+
+.navbar-user a:visited {
+	color: #848484;
+}
+
+.navbar-user a:hover {
+	opacity: 0.7;
+	text-decoration: underline;
+}
+
+.navbar-user li {
+	padding-right: 20px;
+}
+
+.navbar-hamburger {
+	display: none;
+	position: absolute;
+	top: 42px;
+	right: 40px;
+	font-size: 30px;
+}
+
+@media screen and (max-width: 826px) {
+	.navbar{
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	
+	.navbar-menu {
+		display: none;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+	}
+	
+	.navbar-menu li {
+		width: 100%;
+		text-align: center;
+	}
+	
+	.navbar-user {
+		display: none;
+		flex-grow: 1;
+		text-align: center;
+		width: 100%;
+	}
+	
+	.navbar-user li {
+		text-align: center;
+	}
+	
+	.navbar-hamburger {
+		display: block;
+	}
+	
+	.navbar-menu.active, .navbar-user.active{
+		display: flex;
+	}
+	
+}
+
+
+
 
