@@ -12,7 +12,7 @@ body {
 }
 
 nav {
-	background-color: white;
+	background-color: rgb(131,3,54);
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -24,8 +24,8 @@ nav {
 }
 
 nav img {
-	padding-top: 10px;
-	width: 125px;
+	padding-top: 5px;
+	width: 110px;
 }
 
 nav ul {
@@ -43,15 +43,15 @@ nav a {
 .navbar-menu {
 	display: flex;
 	margin-left: 30px;
-	color: #373737;
+	color: white;
 }
 
 nav .navbar-menu a:link {
-	color: #373737;
+	color: white;
 }
 
 nav .navbar-menu a:visited {
-	color: #373737;
+	color: white;
 }
 
 nav .navbar-menu a:hover {
@@ -60,12 +60,14 @@ nav .navbar-menu a:hover {
 
 .navbar-menu li {
 	font-size: 22px;
-	padding: 15px 30px;
+	padding-top: 20px;
+	padding-left: 40px;
 }
 
 .navbar-user {
 	color: #848484;
 	display: flex;
+	padding-right: 10px;
 }
 
 .navbar-user a:link{
@@ -82,6 +84,7 @@ nav .navbar-menu a:hover {
 }
 
 .navbar-user li {
+	padding-top: 18px;
 	padding-right: 20px;
 }
 
