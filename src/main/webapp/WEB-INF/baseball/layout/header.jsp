@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec"%>
+<%@ taglib uri="http://www.java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<sec:authorize access="isAutheticated()">
+	<sec:authentication property="principal" var="principal"/>
+</sec:authorize>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,10 +38,19 @@
       </ul>
     </div>
     <div class="navbar-user">
-      <ul>
-        <li><a href="/user/login"><b>로그인</b></a></li>
-        <li><a href="/user/signup"><b>회원가입</b></a></li>
-      </ul>
+    	<c:if test="${principal == null}">
+	      <ul>
+	        <li><a href="/user/login"><b>로그인</b></a></li>
+	        <li><a href="/user/signup"><b>회원가입</b></a></li>
+	      </ul>
+	    </c:if>
+	    
+	    <c:if test="${principal != null}">
+	      <ul>
+	        <li><a href="#"><b>로그아웃</b></a></li>
+	        <li><a href="#"><b>마이페이지</b></a></li>
+	      </ul>
+	    </c:if>
     </div>
     
     <a class="navbar-hamburger">
