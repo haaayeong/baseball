@@ -7,7 +7,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.baseball.dto.ResponseDTO;
 
+import lombok.RequiredArgsConstructor;
+
 @Controller
+@RequiredArgsConstructor
 public class UserController {
 
 	@GetMapping("/user/signup")
@@ -17,7 +20,9 @@ public class UserController {
 	
 	@PostMapping("/user/signup")
 	@ResponseBody
-	public ResponseDTO<?> insertUser()
+	public ResponseDTO<?> insertUser() {
+		
+	}
 	
 	@GetMapping("/user/login")
 	public String userLogin() {
