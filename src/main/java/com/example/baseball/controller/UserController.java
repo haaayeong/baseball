@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.example.baseball.domain.UserInfo;
 import com.example.baseball.dto.ResponseDTO;
 import com.example.baseball.dto.UserDTO;
-import com.example.baseball.repository.UserRepository;
 import com.example.baseball.service.UserService;
 
 import lombok.RequiredArgsConstructor;
@@ -25,7 +24,6 @@ public class UserController {
 	
 	private final ModelMapper modelMapper;
 	private final UserService userService;
-	private final UserRepository userRepository;
 
 	@GetMapping("/user/signup")
 	public String userSignUp() {

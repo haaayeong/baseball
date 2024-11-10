@@ -7,6 +7,7 @@ const userObject = {
 	},
 	
 	insertUser:function() {
+		alert('회원가입 요청')
 		let user = {
 			nickname: $('#nickname').val(),
 			username: $('#username').val(),
