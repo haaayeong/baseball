@@ -23,5 +23,5 @@
      <button id="btn-save" type="submit" class="btn btn-secondary">회원가입</button>
    </form>
 </div>
-	
+<script src="js/user.js"></script>	
 <%@ include file="../layout/footer.jsp" %>
