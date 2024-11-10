@@ -26,15 +26,15 @@ public class UserService {
 		userRepository.save(userInfo); // DB에 insert.
 	}
 	
-	public UserInfo getUserId(String username) {
-		UserInfo findUserId = userRepository.findByUsername(username).orElseGet(() -> {
+	public UserInfo getUsername(String username) {
+		UserInfo findUsername = userRepository.findByUsername(username).orElseGet(() -> {
 			return new UserInfo();
 		});
 		
-		return findUserId;
+		return findUsername;
 	}
 	
-	public UserInfo getUserNickname(String nickname) {
+	public UserInfo getNickname(String nickname) {
 		UserInfo findNickname = userRepository.findByNickname(nickname).orElseGet(() -> {
 			return new UserInfo();
 		});
